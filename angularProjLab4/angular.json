@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss" /* modifying so that style.scss is the global stylesheet. restart the terminal and open project to re-interpret stylesheet modified*/
+              "src/styles.scss" // modifying so that styles.scss is the global stylesheet. restart the terminal and open project to re-interpret stylesheet modified
             ],
             "scripts": []
           },

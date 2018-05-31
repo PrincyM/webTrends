@@ -1,0 +1,63 @@
+// declare font sizes once and can be used throughout the stylesheet
+
+$big-font: 25px;
+$med-font: 20px;
+$small-font: 18px;
+
+//colors
+$light-grey: lightgrey;
+
+.page-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+
+    &:hover {
+        background-color: $light-grey;
+    }
+}
+
+header {
+    nav {
+        .links { // <ul>
+            > li { // <li>Link1, Link 2
+                  display: inline;
+                  position: relative; // to make the nested links relative to parent links 
+                  font-size: $big-font;
+
+                  .nested-links {
+                      padding-left: 0;
+                      position: absolute;
+                      left: 0;
+                      top: 100%; // spacing the top 100% of the parent link
+                      display: none;
+
+                      li { // <li> Link1a, Link 2b
+                          position: relative;
+                          font-size: $med-font;
+
+                          .sublinks { // <ul>
+                               position: absolute;
+                               top: 0%;
+                               left: 100%;
+                               display: none;
+                               font-size: $small-font;
+                               width: 200%;
+                          }
+
+                          &:hover > .sublinks {
+                              display: block;
+                          }
+                      }
+                  }
+
+                  &:hover > .nested-links { // & represents the above li 
+                        display: inline-block;
+                  }
+            } // </li>
+        } // </ul>
+    }
+}
