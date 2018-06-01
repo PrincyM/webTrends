@@ -1,0 +1,11 @@
+h1 {
+    text-align: center;
+}
+
+.selected {
+    background-color: lightgrey;
+}
+
+li:hover {
+    background-color: aqua;
+}

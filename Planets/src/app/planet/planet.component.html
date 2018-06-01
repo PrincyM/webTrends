@@ -1,0 +1,30 @@
+<p>
+  planet works!
+</p>
+<h1>{{title}}</h1>
+
+<!-- *ngIf -> if planet is undefined, then render content, if false doesn't render the content -->
+<!-- service is what serves data to a component -->
+
+<div *ngIf="planet" id="{{planet.id}}">{{planet.name}}  <!-- compenentName.classPropertyName -->
+</div>
+<div id="planets">
+  <ol>
+    <!-- *ngFor -> like a for loop -->
+    <li *ngFor="let p of planets" 
+         id="{{ p.id }}" 
+         (click)="setPlanet(p)"
+         [class.selected]="p===planet">  <!-- if p equals planet object, line 14 in planet.component.ts, boolean true or false is done.then change bg color to light grey -->
+      {{ p.name }}
+    </li>
+    <!-- <li id="{{ planets[0].id}}">{{ planets[0].name }}</li>
+    <li id="{{ planets[1].id}}">{{ planets[1].name }}</li>    impractical way of display -->
+  </ol>
+  <!-- <ol>
+    <li *ngFor="let i=1; i < 11; i++"></li>     google this
+  </ol> -->
+</div>
+
+<footer>
+  &copy;; {{year}}
+</footer>
